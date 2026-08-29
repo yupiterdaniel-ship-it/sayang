@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun, Cintaku ❤️ | 11 Agustus</title>
+  <meta name="description" content="Website spesial dan penuh cinta untuk merayakan hari ulang tahun pacar tersayang pada tanggal 11 Agustus.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Particles & Hearts Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ==================== ENVELOPE OPENING GATE ==================== -->
+  <div id="envelope-gate" class="gate-overlay">
+    <div class="gate-content">
+      <div class="sparkle-badge"><i class="fa-solid fa-sparkles"></i> Ada Pesan Spesial Buat Kamu</div>
+      
+      <!-- 3D Interactive Envelope -->
+      <div class="envelope-wrapper" id="envelope-trigger" role="button" aria-label="Buka Surat Cinta">
+        <div class="envelope">
+          <div class="envelope-back"></div>
+          <div class="envelope-letter">
+            <div class="letter-preview">
+              <div class="letter-mini-avatar">
+                <img src="assets/images/photo1.jpg" alt="Foto Sayang">
+              </div>
+              <p>Happy Birthday Sayang!</p>
+              <small>11 Agustus ❤️</small>
+            </div>
+          </div>
+          <div class="envelope-front"></div>
+          <div class="envelope-top"></div>
+          <div class="wax-seal" id="wax-seal">
+            <i class="fa-solid fa-heart"></i>
+            <span class="pulse-ring"></span>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="gate-title">Buka Surat Ini Ya, Sayang!</h2>
+      <p class="gate-subtitle">Hari ini 11 Agustus, hari spesial orang paling favoritku di dunia ❤️</p>
+      
+      <button class="btn-open-letter" id="btn-open-experience">
+        <i class="fa-solid fa-envelope-open-text"></i> Buka Surat Cintaku
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN WEBSITE CONTENT ==================== -->
+  <div id="main-app" class="app-container hidden">
+
+    <!-- Floating Audio Control & Navigation -->
+    <header class="romantic-nav">
+      <div class="nav-brand">
+        <span class="heart-pulse">❤️</span>
+        <span class="brand-text">11 Agustus Spesial</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero-section"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#cake-section"><i class="fa-solid fa-cake-candles"></i> Tiup Lilin</a>
+        <a href="#letter-section"><i class="fa-solid fa-scroll"></i> Surat Cinta</a>
+        <a href="#birthday-girl-section"><i class="fa-solid fa-crown"></i> Bidadariku</a>
+        <a href="#reasons-section"><i class="fa-solid fa-hand-holding-heart"></i> Alasan Sayang</a>
+        <a href="#coupons-section"><i class="fa-solid fa-ticket"></i> Kupon Cinta</a>
+        <a href="#wish-box-section"><i class="fa-solid fa-paper-plane"></i> Doa Harapan</a>
+      </nav>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero-section" class="hero-section">
+      <div class="hero-bg-glow"></div>
+      <div class="container hero-content">
+        
+        <!-- Glowing Birthday Girl Avatar -->
+        <div class="hero-photo-wrapper animate-zoom-in">
+          <div class="photo-glow-ring"></div>
+          <div class="hero-photo-frame">
+            <img src="assets/images/photo1.jpg" alt="Foto Pacar Tersayang" class="hero-photo-img">
+          </div>
+          <div class="birthday-crown-badge">👑 Birthday Girl ✨</div>
+        </div>
+
+        <div class="hero-badge animate-fade-down">
+          <i class="fa-solid fa-sparkles"></i> 11 AGUSTUS • ULANG TAHUN PERTAMA KITA BARENG <i class="fa-solid fa-sparkles"></i>
+        </div>
+
+        <h1 class="hero-title animate-zoom-in">
+          Selamat Ulang Tahun, <br>
+          <span class="highlight-text" id="partner-name-display">Sayangku!</span> ❤️
+        </h1>
+
+        <p class="hero-description animate-fade-up">
+          Ini pertama kalinya aku bisa ngerayain hari ulang tahun kamu bareng-bareng. Seneng dan bersyukur banget bisa nemenin kamu di tanggal 11 Agustus ini. Semoga ini jadi awal dari banyak perayaan ulang tahun berikutnya yang bakal kita lewatin berdua ya sayang!
+        </p>
+
+        <!-- Romantic Milestone Card -->
+        <div class="special-date-card glass-panel animate-fade-up">
+          <div class="date-item">
+            <span class="date-number">11</span>
+            <span class="date-label">Agustus</span>
+          </div>
+          <div class="date-divider">❤️</div>
+          <div class="date-item">
+            <span class="date-number" id="love-years-display">Pertama Kali</span>
+            <span class="date-label">Rayain Bareng</span>
+          </div>
+          <div class="date-divider">✨</div>
+          <div class="date-item">
+            <span class="date-number">Selamanya</span>
+            <span class="date-label">Tetap Bareng</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#cake-section" class="btn-romantic btn-primary">
+            <i class="fa-solid fa-cake-candles"></i> Tiup Lilin Ulang Tahun
+          </a>
+          <a href="#letter-section" class="btn-romantic btn-outline">
+            <i class="fa-solid fa-envelope-open-text"></i> Baca Surat Cintaku
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== VIRTUAL CAKE & TIUP LILIN ==================== -->
+    <section id="cake-section" class="cake-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> Momen Tiup Lilin Pertama</span>
+          <h2 class="section-title">Kue Ulang Tahun Pertama Bareng Kamu 🎂</h2>
+          <p class="section-subtitle">Yuk pejamkan mata kamu sebentar, ucapin doa terbaikmu di dalam hati... kalau udah, langsung tiup lilinnya ya sayang!</p>
+        </div>
+
+        <div class="cake-interactive-box glass-panel">
+          
+          <!-- Virtual Animated Birthday Cake -->
+          <div class="cake-container" id="cake-container">
+            <div class="cake-plate"></div>
+            
+            <!-- Cake Base -->
+            <div class="cake-tier cake-tier-bottom">
+              <div class="cake-frosting-wave"></div>
+              <div class="strawberry-toppings">
+                <span class="berry">🍓</span>
+                <span class="berry">🍓</span>
+                <span class="berry">🍓</span>
+              </div>
+            </div>
+            
+            <div class="cake-tier cake-tier-top">
+              <div class="cake-frosting-wave"></div>
+              <div class="strawberry-toppings">
+                <span class="berry">🍓</span>
+                <span class="berry">🍓</span>
+              </div>
+            </div>
+
+            <!-- Glowing Candle -->
+            <div class="cake-candle" id="birthday-candle">
+              <div class="candle-stick"></div>
+              <div class="candle-flame" id="candle-flame">
+                <div class="flame-glow"></div>
+              </div>
+              <div class="candle-smoke hidden" id="candle-smoke"></div>
+            </div>
+
+            <!-- Cake Message Plaque -->
+            <div class="cake-sign">
+              <span>Happy Birthday Sayang! 11 Agustus ❤️</span>
+            </div>
+          </div>
+
+          <!-- Wish / Action Button -->
+          <div class="cake-controls">
+            <button class="btn-romantic btn-blow-candle" id="btn-blow-candle">
+              <i class="fa-solid fa-wind"></i> <span id="blow-btn-text">Tiup Lilinnya Yuk! 🕯️</span>
+            </button>
+            <p class="candle-hint" id="candle-status-hint">💡 Klik tombol di atas buat tiup lilin dan kirim doa kamu!</p>
+          </div>
+
+          <!-- Wish Granted Celebration Message Box (Revealed after blow) -->
+          <div class="wish-reveal-box hidden" id="wish-reveal-box">
+            <div class="wish-icon">🎉✨🥳</div>
+            <h3 class="wish-title">Yeay! Lilin Pertama Kita Berhasil Ditiup! 🎂</h3>
+            <p class="wish-text">
+              "Aamiin ya Allah... Semoga di perayaan pertama kita ini dan seterusnya, kamu selalu dipenuhi kebahagiaan, kesehatan, dan kemudahan dalam segala urusanmu. Aku janji bakal terus nemenin dan ngerayain ulang tahun kamu di tahun-tahun berikutnya. I love you so much!"
+            </p>
+            <div class="wish-heart-badge">Ulang Tahun Pertama Kita ❤️</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ROMANTIC LOVE LETTER ==================== -->
+    <section id="letter-section" class="letter-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-heart"></i> Dari Hatiku</span>
+          <h2 class="section-title">Surat Kecil Buat Kamu 📜</h2>
+          <p class="section-subtitle">Tulisan sederhana yang tulus aku buat khusus di hari ulang tahun pertamamu bareng aku.</p>
+        </div>
+
+        <div class="parchment-letter-wrapper glass-panel">
+          <div class="parchment-texture">
+            <div class="letter-stamp">
+              <i class="fa-solid fa-heart"></i> 11 AGUSTUS
+            </div>
+
+            <div class="letter-header">
+              <span class="letter-date">11 Agustus • Ulang Tahun Pertama Kita Bareng</span>
+              <h3 class="letter-salutation">Hai Sayangku Tercinta,</h3>
+            </div>
+
+            <div class="letter-body">
+              <p>
+                Selamat ulang tahun yaa cintaku! Jujur aku seneng dan bersyukur banget karena ini pertama kalinya aku bisa ngerayain hari ulang tahun kamu di tanggal <strong>11 Agustus</strong> ini secara spesial bareng kamu.
+              </p>
+              
+              <p>
+                Dari awal kita kenal sampe sekarang kita bareng, kamu selalu berhasil bikin hari-hari aku jadi jauh lebih berwarna dan berarti. Makasih banyak ya udah hadir di hidup aku, udah nerima aku apa adanya, sabar ngadepin sifat aku, dan selalu jadi tempat ternyaman buat aku pulang dan cerita apa aja.
+              </p>
+
+              <p>
+                Karena ini perayaan ulang tahun pertama kita berdua, aku pengen bikin hari ini jadi salah satu momen manis yang kamu inget terus. Doa aku buat kamu, semoga kamu selalu dikasih kesehatan, umur yang berkah, hati yang bahagia, dan semua impian yang lagi kamu kejar bisa tercapai satu per satu ya sayang.
+              </p>
+
+              <p class="letter-highlight">
+                "Semoga bukan cuma tahun ini aja, tapi di ulang tahun kamu ke depannya, aku bakal tetep jadi orang yang selalu ada di samping kamu buat ngucapin dan ngerayain bareng. Happy birthday sayangku!"
+              </p>
+            </div>
+
+            <div class="letter-signature">
+              <p>Dari orang yang selalu sayang kamu,</p>
+              <span class="signature-name">Pasanganmu Tersayang ❤️</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== BIRTHDAY GIRL PHOTO SHOWCASE ==================== -->
+    <section id="birthday-girl-section" class="birthday-girl-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-crown"></i> The Birthday Girl</span>
+          <h2 class="section-title">Sosok Paling Cantik di Mataku 🌸</h2>
+          <p class="section-subtitle">Orang yang selalu berhasil bikin aku jatuh cinta setiap hari.</p>
+        </div>
+
+        <div class="girl-photos-grid">
+          
+          <!-- Photo Card 1 -->
+          <div class="girl-photo-card glass-panel">
+            <div class="girl-photo-box">
+              <img src="assets/images/photo1.jpg" alt="Foto Bidadariku 1">
+            </div>
+            <div class="girl-photo-caption">
+              <h3>Cantiknya Bidadariku 💖</h3>
+              <p>Senyum dan tatapan matamu yang selalu bisa bikin duniaku terasa jauh lebih tenang dan bahagia.</p>
+              <span class="photo-badge">✨ 11 Agustus Spesial</span>
+            </div>
+          </div>
+
+          <!-- Photo Card 2 -->
+          <div class="girl-photo-card glass-panel">
+            <div class="girl-photo-box">
+              <img src="assets/images/photo2.jpg" alt="Foto Bidadariku 2">
+            </div>
+            <div class="girl-photo-caption">
+              <h3>Yang Selalu Bikin Gemas & Bahagia 🥰</h3>
+              <p>Selamat ulang tahun ya sayang! Tetap jadi orang yang ceria, manis, dan selalu aku sayang selamanya.</p>
+              <span class="photo-badge">❤️ My Favorite Person</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== REASONS WHY I LOVE YOU ==================== -->
+    <section id="reasons-section" class="reasons-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-sparkles"></i> Hal-Hal Kecil Tentang Kamu</span>
+          <h2 class="section-title">Alasan Aku Sayang Banget Sama Kamu 💖</h2>
+          <p class="section-subtitle">Ini beberapa alasan kecil kenapa aku selalu jatuh cinta sama kamu setiap hari.</p>
+        </div>
+
+        <div class="reasons-grid">
+          
+          <!-- Reason Card 1 -->
+          <div class="reason-card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="reason-number">#1</div>
+                <div class="reason-icon">✨</div>
+                <h3>Senyum & Ketawa Kamu</h3>
+                <span class="card-tap-hint">Klik untuk buka</span>
+              </div>
+              <div class="card-back">
+                <div class="back-icon">🥰</div>
+                <p>Jujur senyum kamu tuh nular banget. Tiap kali kamu ketawa lepas, rasanya capek seharian langsung hilang gitu aja.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason Card 2 -->
+          <div class="reason-card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="reason-number">#2</div>
+                <div class="reason-icon">🌸</div>
+                <h3>Selalu Sabar & Pengertian</h3>
+                <span class="card-tap-hint">Klik untuk buka</span>
+              </div>
+              <div class="card-back">
+                <div class="back-icon">💖</div>
+                <p>Makasih ya udah selalu sabar dan ngertiin aku, bahkan pas mood aku lagi gak karuan atau overthinking.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason Card 3 -->
+          <div class="reason-card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="reason-number">#3</div>
+                <div class="reason-icon">🫂</div>
+                <h3>Tempat Cerita Paling Nyaman</h3>
+                <span class="card-tap-hint">Klik untuk buka</span>
+              </div>
+              <div class="card-back">
+                <div class="back-icon">🧸</div>
+                <p>Cuma ke kamu aku bisa cerita apapun tanpa takut di-judge, dari hal serius sampe hal paling konyol sekalipun.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason Card 4 -->
+          <div class="reason-card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="reason-number">#4</div>
+                <div class="reason-icon">🎶</div>
+                <h3>Perhatian di Hal-Hal Kecil</h3>
+                <span class="card-tap-hint">Klik untuk buka</span>
+              </div>
+              <div class="card-back">
+                <div class="back-icon">🥺</div>
+                <p>Hal-hal kecil kayak kamu ingetin makan, nanyain kabar, atau perhatian kecil lainnya, itu beneran bikin aku ngerasa disayang banget.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason Card 5 -->
+          <div class="reason-card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="reason-number">#5</div>
+                <div class="reason-icon">🌟</div>
+                <h3>Pelukan yang Nenangin</h3>
+                <span class="card-tap-hint">Klik untuk buka</span>
+              </div>
+              <div class="card-back">
+                <div class="back-icon">🤗</div>
+                <p>Kalau lagi banyak pikiran atau capek sama keadaan, deket kamu dan dapet pelukan hangat tuh obat paling manjur.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reason Card 6 -->
+          <div class="reason-card" onclick="flipCard(this)">
+            <div class="card-inner">
+              <div class="card-front">
+                <div class="reason-number">#6</div>
+                <div class="reason-icon">♾️</div>
+                <h3>Karena Kamu Ya Kamu</h3>
+                <span class="card-tap-hint">Klik untuk buka</span>
+              </div>
+              <div class="card-back">
+                <div class="back-icon">💍</div>
+                <p>Aku sayang kamu apa adanya, dengan semua kebaikan, keunikan, dan lucunya tingkah kamu yang selalu bikin aku kangen.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== ROMANTIC LOVE COUPONS ==================== -->
+    <section id="coupons-section" class="coupons-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-gift"></i> Hadiah Spesial Buat Kamu</span>
+          <h2 class="section-title">Kupon Cinta Khusus Pacarku 🎟️</h2>
+          <p class="section-subtitle">Kupon ini berlaku selamanya dan bisa kamu pakai kapan aja yaa! Klik buat klaim kuponmu.</p>
+        </div>
+
+        <div class="coupons-grid">
+          
+          <!-- Coupon 1 -->
+          <div class="coupon-card glass-panel" onclick="claimCoupon(this)">
+            <div class="coupon-left">
+              <div class="coupon-badge">VOUCHER CINTA</div>
+              <h3>Voucher Bebas Jajan / Makan Enak 🍧</h3>
+              <p>Bebas pilih mau jajan apa atau makan di mana aja hari ini, aku yang traktir sampai kenyang!</p>
+              <div class="coupon-terms">✨ Berlaku seumur hidup • Tanpa syarat</div>
+            </div>
+            <div class="coupon-right">
+              <button class="btn-claim-coupon">Klaim ❤️</button>
+            </div>
+            <div class="claimed-stamp hidden">TERKLAIM! ✔️</div>
+          </div>
+
+          <!-- Coupon 2 -->
+          <div class="coupon-card glass-panel" onclick="claimCoupon(this)">
+            <div class="coupon-left">
+              <div class="coupon-badge">VOUCHER CINTA</div>
+              <h3>Voucher Peluk & Dimanja Seharian 🧸</h3>
+              <p>Bebas minta peluk, dielus kepalanya, dan disayang-sayang sepuasnya tanpa batas waktu.</p>
+              <div class="coupon-terms">✨ Berlaku kapanpun kamu butuh pelukan</div>
+            </div>
+            <div class="coupon-right">
+              <button class="btn-claim-coupon">Klaim ❤️</button>
+            </div>
+            <div class="claimed-stamp hidden">TERKLAIM! ✔️</div>
+          </div>
+
+          <!-- Coupon 3 -->
+          <div class="coupon-card glass-panel" onclick="claimCoupon(this)">
+            <div class="coupon-left">
+              <div class="coupon-badge">VOUCHER CINTA</div>
+              <h3>Voucher Movie Time & Nonton Bareng 🍿</h3>
+              <p>Nonton film pilihan kamu ditemani camilan favorit, minuman enak, dan gandengan tangan.</p>
+              <div class="coupon-terms">✨ Bebas pilih film apapun</div>
+            </div>
+            <div class="coupon-right">
+              <button class="btn-claim-coupon">Klaim ❤️</button>
+            </div>
+            <div class="claimed-stamp hidden">TERKLAIM! ✔️</div>
+          </div>
+
+          <!-- Coupon 4 -->
+          <div class="coupon-card glass-panel" onclick="claimCoupon(this)">
+            <div class="coupon-left">
+              <div class="coupon-badge">VOUCHER CINTA</div>
+              <h3>Kartu Bebas Ngambek (Auto Dimaafin) 🥺</h3>
+              <p>Kalau aku ada bikin kesel dikit, tunjukkin kupon ini biar langsung baikan dan disayang lagi yaa!</p>
+              <div class="coupon-terms">✨ Langsung baikan tanpa syarat</div>
+            </div>
+            <div class="coupon-right">
+              <button class="btn-claim-coupon">Klaim ❤️</button>
+            </div>
+            <div class="claimed-stamp hidden">TERKLAIM! ✔️</div>
+          </div>
+
+          <!-- Coupon 5 -->
+          <div class="coupon-card glass-panel" onclick="claimCoupon(this)">
+            <div class="coupon-left">
+              <div class="coupon-badge">VOUCHER CINTA</div>
+              <h3>Voucher Jalan-Jalan Cari Angin 🚗</h3>
+              <p>Keliling sore santai naik motor/mobil, jajan es krim, sambil ngobrol seru berdua.</p>
+              <div class="coupon-terms">✨ Termasuk jajan camilan di jalan</div>
+            </div>
+            <div class="coupon-right">
+              <button class="btn-claim-coupon">Klaim ❤️</button>
+            </div>
+            <div class="claimed-stamp hidden">TERKLAIM! ✔️</div>
+          </div>
+
+          <!-- Coupon 6 -->
+          <div class="coupon-card glass-panel" onclick="claimCoupon(this)">
+            <div class="coupon-left">
+              <div class="coupon-badge">VOUCHER CINTA</div>
+              <h3>Voucher Permintaan Dituruti Seharian 👑</h3>
+              <p>Hari ini kamu jadi ratunya! Apapun yang kamu minta bakal aku usahain dan turuti.</p>
+              <div class="coupon-terms">✨ Hak istimewa khusus bidadariku</div>
+            </div>
+            <div class="coupon-right">
+              <button class="btn-claim-coupon">Klaim ❤️</button>
+            </div>
+            <div class="claimed-stamp hidden">TERKLAIM! ✔️</div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== WISH BOX & NOTES ==================== -->
+    <section id="wish-box-section" class="wish-box-section">
+      <div class="container">
+        
+        <div class="section-header text-center">
+          <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Doa & Harapan</span>
+          <h2 class="section-title">Kirimkan Harapan Manis Buat Kita 💌</h2>
+          <p class="section-subtitle">Tuliskan doa atau pesan manismu di sini, dan biarkan balon harapan terbang ke angkasa!</p>
+        </div>
+
+        <div class="wish-form-wrapper glass-panel">
+          <form id="wish-form" onsubmit="submitWish(event)">
+            <div class="form-group">
+              <label for="sender-name"><i class="fa-solid fa-user"></i> Nama Kamu / Panggilan Sayang:</label>
+              <input type="text" id="sender-name" placeholder="Misal: Sayangku, Beb, Cantik..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="wish-message"><i class="fa-solid fa-comment-heart"></i> Pesan Cinta / Doa Harapan Ulang Tahun:</label>
+              <textarea id="wish-message" rows="4" placeholder="Tuliskan harapan terindahmu di sini..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-romantic btn-primary btn-block">
+              <i class="fa-solid fa-paper-plane"></i> Terbangkan Balon Harapan Cinta 🎈
+            </button>
+          </form>
+
+          <!-- Saved Wishes List -->
+          <div class="wishes-board">
+            <h4 class="wishes-board-title"><i class="fa-solid fa-stars"></i> Balon Doa yang Telah Diterbangkan:</h4>
+            <div id="wishes-list" class="wishes-list">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="romantic-footer text-center">
+      <div class="container">
+        <div class="footer-heart">
+          <i class="fa-solid fa-heart beat"></i>
+        </div>
+        <h3 class="footer-title">Selamat Ulang Tahun, Cintaku!</h3>
+        <p class="footer-date">11 Agustus • Dibuat dengan tulus khusus buat kamu ❤️</p>
+        <p class="footer-copy">Selamanya bareng kamu dalam setiap suka dan duka.</p>
+        <div class="scroll-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+          <i class="fa-solid fa-arrow-up"></i>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

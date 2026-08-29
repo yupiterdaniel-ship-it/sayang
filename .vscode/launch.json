@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Buka Website di Chrome",
+            "file": "${workspaceFolder}/index.html"
+        },
+        {
+            "type": "msedge",
+            "request": "launch",
+            "name": "Buka Website di Edge",
+            "file": "${workspaceFolder}/index.html"
+        }
+    ]
+}
